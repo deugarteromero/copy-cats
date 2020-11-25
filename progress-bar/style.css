@@ -31,37 +31,65 @@ body {
   height: 100%;
   width: 0;
   border-radius: 3px;
-  background-color: red;
+  background-color: #FFD166;
 
   /*Animation*/
-  animation: progress-bar 2s forwards;
+  animation: progress-bar 3s forwards;
 }
 
-/*Text Styling*/
-.text {
+.bar::after {
+  content: "0 %";
   position: absolute;
 
-  height: 100%;
-  width: 396px;
-
-  /* for p*/
-  display: grid;
-  place-content: center;
-}
-.text p {
-  color: #26547C;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-weight: bold;
-  letter-spacing: .20rem;
+  font-size: 1.25rem;
+  color: #26547C;
+
+  /*Animation*/
+  animation: text-change 3s forwards;
 }
 
 @keyframes progress-bar {
-  0% {
-
+  2% {
+    width: 2%;
+  }
+  22% {
+    width: 22%;
+  }
+  25% {
+    content: "25 %";
   }
   50% {
-
+    width: 50%;
+  }
+  65% {
+    width: 65%;
   }
   100% {
+    width: 100%;
+  }
+}
 
+@keyframes text-change {
+  2% {
+    content: "2 %";
+  }
+  22% {
+    content: "22 %";
+  }
+  25% {
+    content: "25 %";
+  }
+  50% {
+    content: "50 %";
+  }
+  65% {
+    content: "65 %";
+  }
+  100% {
+    content: "100 %";
   }
 }
